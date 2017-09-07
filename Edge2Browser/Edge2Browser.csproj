@@ -43,7 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bing2Google.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Edge2Browser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
