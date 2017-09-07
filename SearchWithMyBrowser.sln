@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edge2Browser", "Edge2Browser\Edge2Browser.csproj", "{ECA33357-FAAD-4FA2-A45E-CD4525786D19}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration", "Configuration\Configuration.csproj", "{45CF8F91-C662-4796-A548-618E0AAC5A60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{ECA33357-FAAD-4FA2-A45E-CD4525786D19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECA33357-FAAD-4FA2-A45E-CD4525786D19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECA33357-FAAD-4FA2-A45E-CD4525786D19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45CF8F91-C662-4796-A548-618E0AAC5A60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45CF8F91-C662-4796-A548-618E0AAC5A60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45CF8F91-C662-4796-A548-618E0AAC5A60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45CF8F91-C662-4796-A548-618E0AAC5A60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
