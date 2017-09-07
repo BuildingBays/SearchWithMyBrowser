@@ -25,7 +25,7 @@ namespace SearchWithMyBrowser
             return "lol";
         }
 
-        private static Settings GetUsersSettings()
+        private static Settings GetUserSettings()
         {
             string file = Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),

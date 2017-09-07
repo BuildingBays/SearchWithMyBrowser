@@ -1,27 +1,32 @@
 ﻿using System;
-using System.Diagnostics;
+using System.Web;
 
 namespace SearchWithMyBrowser
 {
-    class Protocol2Url
+    static class Protocol2Url
     {
-        static void Main(string[] args)
+        public static string ExtractURL(string url)
         {
-            if (args.Length != 0 && args[0].StartsWith("microsoft-edge:", StringComparison.OrdinalIgnoreCase))
+            if (url.StartsWith("?launchContext1=", StringComparison.OrdinalIgnoreCase)) // Handle FCU
             {
-                string url = Edge2Browser.ExtractURL(args[0].Substring(15));
-
-                url = ValidateURL(url);
-
-                Process.Start(new ProcessStartInfo()
-                {
-                    FileName = url,
-                    UseShellExecute = true
-                });
+                return ExtractFallCreatorsUpdateURL(url);
             }
+
+            return url;
         }
 
-        private static string ValidateURL(string url)
+        private static string ExtractFallCreatorsUpdateURL(string url)
+        {
+            var uri = new Uri(
+                HttpUtility.UrlDecode(
+                    HttpUtility.ParseQueryString(url)["url"]
+                )
+            );
+
+            return uri.AbsoluteUri + "?" + HttpUtility.UrlEncode(uri.Query);
+        }
+
+        public static string ValidateURL(string url)
         {
             if (url.StartsWith("//"))
                 url = url.Substring(2);

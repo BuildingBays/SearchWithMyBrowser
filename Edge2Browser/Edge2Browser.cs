@@ -1,34 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
 using System.Diagnostics;
 
 namespace SearchWithMyBrowser
 {
-    static class Edge2Browser
+    class Edge2Browser
     {
-        public static string ExtractURL(string url)
+        public static void Main(string[] args)
         {
-            if (url.StartsWith("?launchContext1=", StringComparison.OrdinalIgnoreCase)) // Handle FCU
+            if (args.Length != 0 && args[0].StartsWith("microsoft-edge:", StringComparison.OrdinalIgnoreCase))
             {
-                return ExtractFallCreatorsUpdateURL(url);
+                string url = Protocol2Url.ExtractURL(args[0].Substring(15));
+
+                url = Protocol2Url.ValidateURL(url);
+
+                Process.Start(new ProcessStartInfo()
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
             }
-
-            return url;
         }
 
-        private static string ExtractFallCreatorsUpdateURL(string url)
-        {
-            var uri = new Uri(
-                HttpUtility.UrlDecode(
-                    HttpUtility.ParseQueryString(url)["url"]
-                )
-            );
-
-            return uri.AbsoluteUri + "?" + HttpUtility.UrlEncode(uri.Query);
-        }
     }
 }
