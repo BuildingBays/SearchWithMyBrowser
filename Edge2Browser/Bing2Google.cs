@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace SearchWithMyBrowser
 {
-    class Edge2Browser
+    class Bing2Google
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }

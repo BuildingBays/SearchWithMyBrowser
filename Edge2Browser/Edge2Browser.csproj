@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{ECA33357-FAAD-4FA2-A45E-CD4525786D19}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Edge2Browser</RootNamespace>
+    <RootNamespace>SearchWithMyBrowser</RootNamespace>
     <AssemblyName>Edge2Browser</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bing2Google.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
