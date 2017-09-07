@@ -8,6 +8,7 @@ namespace SearchWithMyBrowser
     {
         private enum SearchEngine
         {
+            Custom = 0,
             Google = 1,
             DuckDuckGo = 2,
             Bing = 3
@@ -15,20 +16,20 @@ namespace SearchWithMyBrowser
 
         private struct Settings
         {
-            internal bool CustomEngineSelected;
             internal string CustomEngineString;
             internal SearchEngine Engine;
         }
 
         public static string GetCustomURL(string url)
         {
-            return "lol";
+            var settings = GetUserSettings();
+            return $"{settings.CustomEngineString} {settings.Engine}";
         }
 
         private static Settings GetUserSettings()
         {
             string file = Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                 "SearchWithMyBrowser",
                 "config.ini"
             );
@@ -41,7 +42,6 @@ namespace SearchWithMyBrowser
             var data = new FileIniDataParser().ReadFile(file)["SearchWithMyBrowser"];
             return new Settings()
             {
-                CustomEngineSelected = data["UseCustomEngine"].Equals("true"),
                 CustomEngineString = data["CustomEngineURL"],
                 Engine = (SearchEngine)int.Parse(data["Engine"])
             };

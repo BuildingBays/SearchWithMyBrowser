@@ -8,9 +8,7 @@ namespace SearchWithMyBrowser
         public static string ExtractURL(string url)
         {
             if (url.StartsWith("?launchContext1=", StringComparison.OrdinalIgnoreCase)) // Handle FCU
-            {
                 return ExtractFallCreatorsUpdateURL(url);
-            }
 
             return url;
         }

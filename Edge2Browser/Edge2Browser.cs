@@ -13,6 +13,8 @@ namespace SearchWithMyBrowser
 
                 url = Protocol2Url.ValidateURL(url);
 
+                url = Bing2Google.GetCustomURL(url);
+
                 Process.Start(new ProcessStartInfo()
                 {
                     FileName = url,
