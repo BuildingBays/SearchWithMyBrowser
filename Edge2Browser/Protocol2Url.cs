@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace SearchWithMyBrowser
 {
-    class Edge2Browser
+    class Protocol2Url
     {
+        static void Main(string[] args)
+        {
+            // Main code here
+        }
     }
 }

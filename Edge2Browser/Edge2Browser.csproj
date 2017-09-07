@@ -45,6 +45,7 @@
     <Compile Include="Bing2Google.cs" />
     <Compile Include="Edge2Browser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protocol2Url.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
