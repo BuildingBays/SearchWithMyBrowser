@@ -1,5 +1,6 @@
 ﻿using MadMilkman.Ini;
 using Mvvm;
+using SearchWithMyBrowser.Helpers;
 using SearchWithMyBrowser.Models;
 using System;
 using System.IO;
@@ -8,21 +9,16 @@ namespace SearchWithMyBrowser.ViewModels
 {
     class MainWindowViewModel : BindableBase
     {
-        Settings _settings;
-        public Settings CurrentSettings
-        {
-            get => _settings;
-            set => SetProperty(ref _settings, value);
-        }
+        private Settings _settings;
 
         public string CustomSearchURL
         {
-            get => CurrentSettings.CustomURL;
+            get => _settings.CustomURL;
             set
             {
-                if (CurrentSettings.CustomURL != value)
+                if (_settings.CustomURL != value)
                 {
-                    CurrentSettings.CustomURL = value;
+                    _settings.CustomURL = value;
 
                     OnPropertyChanged(nameof(CustomSearchURL));
                     OnPropertyChanged(nameof(CustomSearchSample));
@@ -32,7 +28,21 @@ namespace SearchWithMyBrowser.ViewModels
 
         public string CustomSearchSample
         {
-            get => CurrentSettings.CustomURL.Replace("%{s}", "Hello%20World");
+            get => _settings.CustomURL.Replace("%{s}", "Hello%20World");
+        }
+
+        public SearchEngine SelectedSearchEngine
+        {
+            get => _settings.EngineSelection;
+            set
+            {
+                if (_settings.EngineSelection != value)
+                {
+                    _settings.EngineSelection = value;
+
+                    OnPropertyChanged(nameof(SelectedSearchEngine));
+                }
+            }
         }
 
         public MainWindowViewModel()
