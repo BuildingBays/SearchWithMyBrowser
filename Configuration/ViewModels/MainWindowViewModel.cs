@@ -1,11 +1,7 @@
-﻿using SearchWithMyBrowser.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MadMilkman.Ini;
 using Mvvm;
-using MadMilkman.Ini;
+using SearchWithMyBrowser.Models;
+using System;
 using System.IO;
 
 namespace SearchWithMyBrowser.ViewModels
@@ -39,7 +35,8 @@ namespace SearchWithMyBrowser.ViewModels
         {
             IniFile file = new IniFile();
             file.Load(FileName);
-            IniSection section = file.Sections.Add("SearchWithMyBrowser");
+            file.Sections.Add("SearchWithMyBrowser"); // Create Section if it doesn't exists
+            IniSection section = file.Sections["SearchWithMyBrowser"];
             return section.Deserialize<Settings>();
         }
     }
