@@ -15,10 +15,10 @@ namespace SearchWithMyBrowser
             Bing = 3
         }
 
-        private struct Settings
+        private class Settings
         {
-            internal string CustomEngineString;
-            internal SearchEngine Engine;
+            internal string CustomEngineString = "https://search.yahoo.com/search?p=%{s}";
+            internal SearchEngine Engine = SearchEngine.Google;
         }
 
         public static string GetCustomURL(string url)

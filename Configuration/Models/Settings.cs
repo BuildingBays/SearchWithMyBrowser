@@ -18,7 +18,7 @@ namespace SearchWithMyBrowser.Models
 
     public class Settings : BindableBase
     {
-        private string _customURL = "https://google.com/?q=%{s}";
+        private string _customURL = "https://search.yahoo.com/search?p=%{s}";
 
         [IniSerialization("CustomEngineURL")]
         public string CustomURL
@@ -27,7 +27,7 @@ namespace SearchWithMyBrowser.Models
             set => SetProperty<string>(ref _customURL, value, "CustomURL");
         }
 
-        private SearchEngine _searchEngine = SearchEngine.Bing;
+        private SearchEngine _searchEngine = SearchEngine.Google;
 
         [IniSerialization("Engine")]
         public SearchEngine EngineSelection
