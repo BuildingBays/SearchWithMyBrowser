@@ -15,6 +15,26 @@ namespace SearchWithMyBrowser.ViewModels
             set => SetProperty(ref _settings, value);
         }
 
+        public string CustomSearchURL
+        {
+            get => CurrentSettings.CustomURL;
+            set
+            {
+                if (CurrentSettings.CustomURL != value)
+                {
+                    CurrentSettings.CustomURL = value;
+
+                    OnPropertyChanged(nameof(CustomSearchURL));
+                    OnPropertyChanged(nameof(CustomSearchSample));
+                }
+            }
+        }
+
+        public string CustomSearchSample
+        {
+            get => CurrentSettings.CustomURL.Replace("%{s}", "Hello%20World");
+        }
+
         public MainWindowViewModel()
         {
             _settings = LoadUserSettings();

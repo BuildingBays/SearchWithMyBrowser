@@ -23,9 +23,9 @@
             <RadioButton IsChecked="{Binding Path=CurrentSettings.EngineSelection, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static helpers:SearchEngine.Google}}" Content="Google"/>
             <StackPanel Orientation="Horizontal">
                 <RadioButton IsChecked="{Binding Path=CurrentSettings.EngineSelection, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static helpers:SearchEngine.Custom}}" Content="Custom: " VerticalAlignment="Center"/>
-                <TextBox Text="{Binding CurrentSettings.CustomURL, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Path=CurrentSettings.EngineSelection, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static helpers:SearchEngine.Custom}}"/>
+                <TextBox Text="{Binding CustomSearchURL, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Path=CurrentSettings.EngineSelection, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static helpers:SearchEngine.Custom}}"/>
             </StackPanel>
-            <TextBlock/>
+            <TextBlock Text="{Binding CustomSearchSample}"/>
         </StackPanel>
     </Grid>
 </Window>
