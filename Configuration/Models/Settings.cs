@@ -24,7 +24,7 @@ namespace SearchWithMyBrowser.Models
         public string CustomURL
         {
             get => _customURL;
-            set => SetProperty<string>(ref _customURL, value, "CustomURL");
+            set => SetProperty(ref _customURL, value, "CustomURL");
         }
 
         private SearchEngine _searchEngine = SearchEngine.Google;
@@ -33,7 +33,7 @@ namespace SearchWithMyBrowser.Models
         public SearchEngine EngineSelection
         {
             get => _searchEngine;
-            set => SetProperty<SearchEngine>(ref _searchEngine, value, "EngineSelection");
+            set => SetProperty(ref _searchEngine, value, "EngineSelection");
         }
     }
 }
