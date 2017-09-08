@@ -12,7 +12,7 @@ namespace SearchWithMyBrowser.ViewModels
         public Settings CurrentSettings
         {
             get => _settings;
-            set => SetProperty(ref _settings, value, "Settings");
+            set => SetProperty(ref _settings, value);
         }
 
         public MainWindowViewModel()
