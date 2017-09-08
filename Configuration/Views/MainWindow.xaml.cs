@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SearchWithMyBrowser
+namespace SearchWithMyBrowser.Views
 {
     /// <summary>
     /// Logique d'interaction pour MainWindow.xaml
