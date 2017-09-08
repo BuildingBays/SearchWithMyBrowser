@@ -5,17 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using MadMilkman.Ini;
 using Mvvm;
+using SearchWithMyBrowser.Helpers;
 
 namespace SearchWithMyBrowser.Models
 {
-    public enum SearchEngine
-    {
-        Custom = 0,
-        Google = 1,
-        DuckDuckGo = 2,
-        Bing = 3
-    }
-
     public class Settings : BindableBase
     {
         private string _customURL = "https://search.yahoo.com/search?p=%{s}";

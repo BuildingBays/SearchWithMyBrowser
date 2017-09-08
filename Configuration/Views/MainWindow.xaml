@@ -3,16 +3,24 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SearchWithMyBrowser.ViewModels"
+        xmlns:VM="clr-namespace:SearchWithMyBrowser.ViewModels"
+        xmlns:helpers="clr-namespace:SearchWithMyBrowser.Helpers"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
 
     <Window.DataContext>
-        <local:MainWindowViewModel/>
+        <VM:MainWindowViewModel/>
     </Window.DataContext>
-    
+
+    <Window.Resources>
+        <helpers:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
+    </Window.Resources>
+
     <Grid>
-        <TextBlock Text="{Binding CurrentSettings.EngineSelection, UpdateSourceTrigger=PropertyChanged}" />
-        <TextBox Text="{Binding CurrentSettings.CustomURL, UpdateSourceTrigger=PropertyChanged}" Margin="0,20,0,0"/>
+        <StackPanel>
+            <RadioButton IsChecked="{Binding Path=CurrentSettings.EngineSelection, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static helpers:SearchEngine.Bing}}" Content="Bing"/>
+            <RadioButton IsChecked="{Binding Path=CurrentSettings.EngineSelection, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static helpers:SearchEngine.Google}}" Content="Google"/>
+        </StackPanel>
+        <TextBox Text="{Binding CurrentSettings.CustomURL, UpdateSourceTrigger=PropertyChanged}" Margin="0,40,0,0"/>
     </Grid>
 </Window>
