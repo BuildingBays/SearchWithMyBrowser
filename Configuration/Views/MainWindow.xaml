@@ -12,7 +12,7 @@
     </Window.DataContext>
     
     <Grid>
-        <TextBlock Text="{Binding CurrentSettings.EngineSelection}" />
+        <TextBlock Text="{Binding CurrentSettings.EngineSelection, UpdateSourceTrigger=PropertyChanged}" />
         <TextBox Text="{Binding CurrentSettings.CustomURL, UpdateSourceTrigger=PropertyChanged}" Margin="0,20,0,0"/>
     </Grid>
 </Window>
