@@ -12,7 +12,8 @@ namespace SearchWithMyBrowser
             Custom = 0,
             Google = 1,
             DuckDuckGo = 2,
-            Bing = 3
+            Bing = 3,
+            Baidu = 4
         }
 
         private class Settings
@@ -40,6 +41,8 @@ namespace SearchWithMyBrowser
                     return $"https://duckduckgo.com/?q={SearchTerm}";
                 case SearchEngine.Bing:
                     return url;
+                case SearchEngine.Baidu:
+                    return $"http://www.baidu.com/s?wd={SearchTerm}";
                 default:
                     throw new InvalidOperationException();
             }
