@@ -19,6 +19,7 @@
 
     <Grid>
         <StackPanel>
+            <RadioButton IsChecked="{Binding Path=SelectedSearchEngine, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static helpers:SearchEngine.Baidu}}" Content="{x:Static local:Strings.Baidu}"/>
             <RadioButton IsChecked="{Binding Path=SelectedSearchEngine, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static helpers:SearchEngine.Bing}}" Content="{x:Static local:Strings.Bing}"/>
             <RadioButton IsChecked="{Binding Path=SelectedSearchEngine, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static helpers:SearchEngine.DuckDuckGo}}" Content="{x:Static local:Strings.DuckDuckGo}"/>
             <RadioButton IsChecked="{Binding Path=SelectedSearchEngine, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static helpers:SearchEngine.Google}}" Content="{x:Static local:Strings.Google}"/>

@@ -11,6 +11,7 @@ namespace SearchWithMyBrowser.Helpers
         Custom = 0,
         Google = 1,
         DuckDuckGo = 2,
-        Bing = 3
+        Bing = 3,
+        Baidu = 4
     }
 }

@@ -61,6 +61,15 @@ namespace SearchWithMyBrowser {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Baidu.
+        /// </summary>
+        public static string Baidu {
+            get {
+                return ResourceManager.GetString("Baidu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Bing.
         /// </summary>
         public static string Bing {
