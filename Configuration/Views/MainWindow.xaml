@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:VM="clr-namespace:SearchWithMyBrowser.ViewModels"
         xmlns:helpers="clr-namespace:SearchWithMyBrowser.Helpers"
+        xmlns:local="clr-namespace:SearchWithMyBrowser"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
 
@@ -18,11 +19,11 @@
 
     <Grid>
         <StackPanel>
-            <RadioButton IsChecked="{Binding Path=SelectedSearchEngine, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static helpers:SearchEngine.Bing}}" Content="Bing"/>
-            <RadioButton IsChecked="{Binding Path=SelectedSearchEngine, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static helpers:SearchEngine.DuckDuckGo}}" Content="DuckDuckGo"/>
-            <RadioButton IsChecked="{Binding Path=SelectedSearchEngine, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static helpers:SearchEngine.Google}}" Content="Google"/>
+            <RadioButton IsChecked="{Binding Path=SelectedSearchEngine, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static helpers:SearchEngine.Bing}}" Content="{x:Static local:Strings.Bing}"/>
+            <RadioButton IsChecked="{Binding Path=SelectedSearchEngine, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static helpers:SearchEngine.DuckDuckGo}}" Content="{x:Static local:Strings.DuckDuckGo}"/>
+            <RadioButton IsChecked="{Binding Path=SelectedSearchEngine, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static helpers:SearchEngine.Google}}" Content="{x:Static local:Strings.Google}"/>
             <StackPanel Orientation="Horizontal">
-                <RadioButton IsChecked="{Binding Path=SelectedSearchEngine, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static helpers:SearchEngine.Custom}}" Content="Custom: " VerticalAlignment="Center"/>
+                <RadioButton IsChecked="{Binding Path=SelectedSearchEngine, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static helpers:SearchEngine.Custom}}" Content="{x:Static local:Strings.CustomEngine}" VerticalAlignment="Center"/>
                 <TextBox Text="{Binding CustomSearchURL, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Path=SelectedSearchEngine, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static helpers:SearchEngine.Custom}}"/>
             </StackPanel>
             <TextBlock Text="{Binding CustomSearchSample}"/>
